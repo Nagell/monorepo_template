@@ -1,0 +1,32 @@
+{
+    "name": "monorepo_template",
+    "version": "1.0.0",
+    "workspaces": {
+        "packages": [
+            "apps/*",
+            "libs/*"
+        ]
+    },
+    "scripts": {
+        "init": "yarn install",
+        "ci": "yarn install --frozen-lockfile",
+        "build:prod": "nx run-many -t build:prod",
+        "build:staging": "nx run-many -t build:staging",
+        "clean": "npm exec --workspaces -- npx rimraf node_modules && npx rimraf node_modules"
+    },
+    "dependencies": {
+        "@vueuse/core": "^10.7.1",
+        "@vueuse/integrations": "^10.11.0",
+        "axios": "^1.6.4",
+        "pinia": "^2.1.7",
+        "sass": "^1.69.7",
+        "vue": "^3.4.5",
+        "vue-i18n": "^9.8.0",
+        "vue-router": "^4.3.2"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.4",
+        "vite": "^5.1.3",
+        "vite-plugin-chunk-split": "^0.5.0"
+    }
+}

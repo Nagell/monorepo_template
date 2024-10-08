@@ -1,0 +1,44 @@
+# compiled output
+/dist
+/tmp
+/out-tsc
+**/storybook-static
+
+# dependencies
+/node_modules
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# SonarQube
+.sonar/
+.sonarqube/
+.scannerwork/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+.nx/cache
