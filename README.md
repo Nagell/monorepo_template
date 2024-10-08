@@ -17,6 +17,7 @@ It is focused on the Vue.js framework, but can be easily adapted to other framew
 Used tools and libraries:
 
 - `nx` as a monorepo manager
+- `husky` and `conventional-commits` for commit linting
 - `yarn` workspaces for dependency management
 - `eslint` (with`@stylistic/eslint-plugin` instead of prettier) for linting
 - `vite` as a development server and build tool
