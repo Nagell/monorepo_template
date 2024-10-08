@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc",
+        "allowJs": true,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "jsx": "preserve",
+        "jsxImportSource": "vue",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "verbatimModuleSyntax": true,
+        "types": [
+            "vite/client",
+            "node",
+        ],
+    },
+    "files": [],
+    "exclude": [
+        "src/**/*.spec.ts",
+        "src/**/*.test.ts",
+        "src/**/*.spec.vue",
+        "src/**/*.test.vue"
+    ],
+    "include": [
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "src/**/*.ts",
+        "src/**/*.vue",
+        "src/**/*.stories.ts",
+        "src/**/*.stories.js",
+        "src/**/*.stories.jsx",
+        "src/**/*.stories.tsx",
+        "src/**/*.stories.mdx",
+        ".storybook/*.js",
+        ".storybook/*.ts"
+    ],
+    "extends": "../../tsconfig.base.json"
+}

@@ -1,0 +1,51 @@
+{
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "plugins": [
+        {
+            "plugin": "@nx/vite/plugin",
+            "options": {
+                "buildTargetName": "build:prod",
+                "serveTargetName": "serve",
+                "previewTargetName": "preview",
+                "testTargetName": "test",
+                "serveStaticTargetName": "serve-static"
+            }
+        },
+        {
+            "plugin": "@nx/eslint/plugin",
+            "options": {
+                "targetName": "lint"
+            }
+        },
+        {
+            "plugin": "@nx/storybook/plugin",
+            "options": {
+                "buildStorybookTargetName": "build-storybook",
+                "serveStorybookTargetName": "storybook",
+                "testStorybookTargetName": "test-storybook",
+                "staticStorybookTargetName": "static-storybook"
+            }
+        },
+        {
+            "plugin": "@nx/js",
+            "options": {
+                "analyzeSourceFiles": true
+            }
+        }
+    ],
+    "tasksRunnerOptions": {
+        "default": {
+            "options": {}
+        }
+    },
+    "namedInputs": {
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "sharedGlobals": [],
+        "production": ["default"]
+    },
+    "targetDefaults": {
+        "build-storybook": {
+            "cache": true
+        }
+    }
+}

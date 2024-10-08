@@ -1,0 +1,28 @@
+{
+    "name": "@monorepo_template/ui",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts",
+        "./src/*": "./src/*"
+    },
+    "files": [
+        "src"
+    ],
+    "nx": {
+        "projectType": "library"
+    },
+    "scripts": {
+        "storybook:dev": "nx storybook -p 6006",
+        "storybook:build": "nx build-storybook",
+        "storybook:preview": "nx static-storybook",
+        "build:staging": "nx build-storybook --output-dir ./../../dist/storybook/ui",
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src",
+        "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix src"
+    },
+    "devDependencies": {
+        "@nx/storybook": "^18.3.2"
+    },
+    "dependencies": {}
+}

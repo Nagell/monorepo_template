@@ -5,7 +5,7 @@
 **/storybook-static
 
 # dependencies
-/node_modules
+**/node_modules/
 
 # local env files
 .env.local
