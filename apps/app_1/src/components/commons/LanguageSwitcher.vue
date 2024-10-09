@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-    import { useI18nStore } from '@/stores/i18nStore'
+    import { useI18nStore } from '@/stores/i18n.store'
 
     import type { LanguageValue } from '@/types/localStorage'
 

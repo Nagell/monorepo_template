@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { createI18n } from 'vue-i18n'
 
-import { useLocalStorageStore } from '@/stores/localStorageStore'
+import { useLocalStorageStore } from '@/stores/localStorage.store'
 
 import type { LanguageValue } from '@/types/localStorage'
 

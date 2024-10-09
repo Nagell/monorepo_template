@@ -1,4 +1,4 @@
-import { useI18nStore } from '@/stores/i18nStore'
+import { useI18nStore } from '@/stores/i18n.store'
 
 import type { App } from 'vue'
 

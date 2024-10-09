@@ -1,7 +1,7 @@
 ﻿import { createApp } from 'vue'
 
 import { i18nPlugin } from '@/plugins/i18n'
-import { useI18nStore } from '@/stores/i18nStore'
+import { useI18nStore } from '@/stores/i18n.store'
 import { pinia } from '@/stores/pinia'
 
 import App from './App.vue'
