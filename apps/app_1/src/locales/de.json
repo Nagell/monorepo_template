@@ -6,6 +6,8 @@
     "404.description": "Entschuldigung, die Seite, die Sie suchen, existiert nicht.",
     "home.title": "Startseite",
     "home.subtitle": "Alles funktioniert gut!",
+    "home.fetchingPosts": "Beiträge werden geladen",
+    "home.fetchMorePosts": "Weitere Beiträge laden",
     "test.linebreak": "Text\nmit\neinem\nUmbruch",
     "test.placeholder": "Hallo, {name}",
     "test.plural": "nichts|{count} Apfel|{count} Äpfel"

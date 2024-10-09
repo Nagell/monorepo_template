@@ -6,6 +6,8 @@
     "404.description": "Sorry, the page you are looking for does not exist.",
     "home.title": "Home Page",
     "home.subtitle": "All is working fine!",
+    "home.fetchingPosts": "Fetching posts",
+    "home.fetchMorePosts": "Fetch more posts",
     "test.linebreak": "Text\nwith\na\nbreak",
     "test.placeholder": "Hello, {name}",
     "test.plural": "nothing|{count} apple|{count} apples"

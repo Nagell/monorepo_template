@@ -1,6 +1,6 @@
 <template>
     <DefaultLayout>
-        <div class="col-span-12 h-[70vh] flex flex-col items-center justify-center">
+        <div class="h-[70vh] flex flex-col items-center justify-center">
             <h1 class="text-6xl text-center">
                 {{ $t('404.title') }}
             </h1>
