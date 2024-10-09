@@ -1,0 +1,83 @@
+import { Meta } from "@storybook/blocks";
+import {
+    SbDocsStyles,
+    SbContainer,
+    SbContainerHeader,
+    SbSectionTwoColumns,
+    SbSectionItem,
+    SbCallout,
+    SbCalloutText,
+    SbCalloutImg,
+    SbSectionLinks,
+    SbImgIcon,
+    SbExternalLink
+} from "./assets/DocumentationHelper.mdx";
+
+import IntroductionDocs from "./assets/introduction/introduction-docs.png";
+import FigmaLogo from "./assets/introduction/figma-logo.svg";
+import NpmLogo from "./assets/introduction/npm-logo.svg";
+
+<Meta title="Introduction" />
+
+<SbDocsStyles />
+
+<SbContainer>
+    <SbContainerHeader>
+        # Introduction
+
+        This library is a collection of reusable components used to build our apps.
+    </SbContainerHeader>
+
+    <SbSectionTwoColumns>
+        <SbSectionItem>
+            ### How to read it
+
+            The library is following atomic design principles.  
+            Therefore there are a couple of areas in which all elements are divided:
+
+            * __Foundation__ - Colors, Typography, etc.
+            * __Atoms__ - Basic building blocks
+            * __Molecules__ - Combinations of atoms
+            * __Organisms__ - Combinations of molecules
+            * __Pages__ - Combinations of organisms
+
+            More about <a href="https://atomicdesign.bradfrost.com/chapter-2/" target="_blank">Atomic Design</a>
+
+        </SbSectionItem>
+    </SbSectionTwoColumns>
+</SbContainer>
+
+
+<SbCallout>
+    <SbCalloutText>
+        ### Where to find more specific documentation
+
+        Under stories you can find "Docs" tab. It contains all the information about the component.
+    </SbCalloutText>
+    <SbCalloutImg src={IntroductionDocs} alt="Screenshot of the Storybook sidebar with selected Docs page"/>
+</SbCallout>
+
+
+<SbSectionLinks>
+    <SbSectionItem>
+        <SbImgIcon src={FigmaLogo} className="icon" alt="Figma logo" />
+        ### Design
+
+        Stored as Figma file contains all the design tokens, components, and patterns. It's a single source of truth for designers and developers.
+
+        <SbExternalLink
+            href="#" target="_blank"
+        > Open Design File </SbExternalLink>
+    </SbSectionItem>
+    <SbSectionItem>
+        <SbImgIcon src={NpmLogo} className="icon" alt="Markdown logo" />
+        ### Package usage
+
+        The way of using this package and connecting to its styles and components is described in the .md file of this library.
+
+        <SbExternalLink
+            href="#" target="_blank"
+        > Open installation guide </SbExternalLink>
+    </SbSectionItem>
+</SbSectionLinks>
+
