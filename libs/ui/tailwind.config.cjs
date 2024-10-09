@@ -8,6 +8,14 @@ export default {
         './src/**/*.{vue,js,ts,jsx,tsx}',
         // './node_modules/<your_library>/**/*.{vue,js,ts,jsx,tsx}'
     ],
+    safelist: [
+        'bg-primary',
+        'bg-surface',
+        {
+            pattern: /bg-(primary|surface)-(50|100|200|300|400|500|600|700|800|900|950)/,
+        },
+        'bg-white',
+    ],
     theme: {
         // Define your overwrites and customizations for the default Tailwind CSS theme here
         colors: {
