@@ -1,0 +1,12 @@
+{
+    "menu.home": "Startseite",
+    "menu.404": "404 Seite",
+    "404.title": "404",
+    "404.subtitle": "Seite nicht gefunden",
+    "404.description": "Entschuldigung, die Seite, die Sie suchen, existiert nicht.",
+    "home.title": "Startseite",
+    "home.subtitle": "Alles funktioniert gut!",
+    "test.linebreak": "Text\nmit\neinem\nUmbruch",
+    "test.placeholder": "Hallo, {name}",
+    "test.plural": "nichts|{count} Apfel|{count} Äpfel"
+}

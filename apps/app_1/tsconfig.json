@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc",
+        "allowJs": true,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "jsx": "preserve",
+        "jsxImportSource": "vue",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "verbatimModuleSyntax": true,
+        "noErrorTruncation": true,
+        "types": [
+            "vite/client",
+            "node"
+        ],
+        "paths": {
+            "*": [
+                "src/types/*"
+            ],
+            "@/*": [
+                "apps/app_1/src/*"
+            ],
+            "@monorepo/commons": [
+                "libs/commons/src/index.ts"
+            ],
+            "@monorepo/ui": [
+                "libs/ui/src/*"
+            ],
+        },
+    },
+    "files": [],
+    "exclude": [
+        "src/**/*.spec.ts",
+        "src/**/*.test.ts",
+        "src/**/*.spec.vue",
+        "src/**/*.test.vue"
+    ],
+    "include": [
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "src/**/*.ts",
+        "src/**/*.vue"
+    ],
+    "extends": "../../tsconfig.base.json"
+}

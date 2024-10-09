@@ -1,6 +1,6 @@
-# Monorepo Template
+# Vue Based Monorepo Template
 
-- [Monorepo Template](#monorepo-template)
+- [Vue Based Monorepo Template](#vue-based-monorepo-template)
   - [Description](#description)
   - [Project setup / Installation](#project-setup--installation)
     - [Additional commands](#additional-commands)
@@ -23,6 +23,12 @@ Used tools and libraries:
 - `vite` as a development server and build tool
 - `typescript` for type safety
 - `tailwindcss` for styling
+
+The template contains a few example libraries and applications with some basic functionality.
+
+- `@monorepo/app_1` - example application using the shared libraries
+- `@monorepo/commons` - shared library with some basic helpers and Vue composables
+- `@monorepo/ui` - shared library with some basic styling and components
 
 ## Project setup / Installation
 

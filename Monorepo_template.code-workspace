@@ -66,6 +66,7 @@
             "general"
         ],
         "i18n-ally.keystyle": "flat",
+        "i18n-ally.sourceLanguage": "en",
         /* tailwind */
         "tailwindCSS.experimental.classRegex": [
             // for VuePrime styling. Example: class: [strings_in_this_array]

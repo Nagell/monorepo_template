@@ -1,0 +1,22 @@
+{
+    "name": "@monorepo/app_1",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "serve": "vite",
+        "build:prod": "vite build",
+        "build:staging": "vite build --mode staging",
+        "preview": "vite preview",
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src",
+        "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix src"
+    },
+    "dependencies": {
+        "@monorepo/commons": "*",
+        "@monorepo/ui": "*"
+    },
+    "devDependencies": {},
+    "nx": {
+        "projectType": "application"
+    }
+}

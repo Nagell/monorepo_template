@@ -1,0 +1,10 @@
+/* base */
+@import "tailwindcss/base";
+@import '@monorepo/ui/src/assets/styles/base/index.css';
+@import "./base/index.css";
+/* components */
+@import "tailwindcss/components";
+@import '@monorepo/ui/src/assets/styles/components/index.css';
+/* utilities */
+@import "tailwindcss/utilities";
+@import '@monorepo/ui/src/assets/styles/utilities/index.css';

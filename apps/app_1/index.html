@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/vite.svg"
+        >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>App 1</title>
+    </head>
+    <body>
+        <!-- NoScript -->
+        <noscript>
+            <strong>
+                We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.
+            </strong>
+        </noscript>
+
+        <!-- Internet Explorer Warning -->
+        <script>
+            if (navigator.userAgent.indexOf("MSIE ") > -1 || navigator.userAgent.indexOf("Trident/") > -1) {
+                alert("You are using the insecure and outdated Internet Explorer. For security reasons, the use of our app with Internet Explorer is not supported. Please use a different browser.");
+            }
+        </script>
+
+        <!-- Vue App -->
+        <div id="app"></div>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>
