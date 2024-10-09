@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc",
+        "allowJs": true,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "jsx": "preserve",
+        "jsxImportSource": "vue",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "verbatimModuleSyntax": true,
+        "types": [
+            "vite/client",
+            "node"
+        ]
+    },
+    "files": [],
+    "exclude": [
+        "src/**/*.spec.ts",
+        "src/**/*.test.ts",
+        "src/**/*.spec.vue",
+        "src/**/*.test.vue"
+    ],
+    "include": [
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "src/**/*.ts",
+        "src/**/*.vue"
+    ],
+    "extends": "../../tsconfig.base.json"
+}
