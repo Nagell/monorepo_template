@@ -5,7 +5,8 @@
     "type": "module",
     "exports": {
         ".": "./src/index.ts",
-        "./src/*": "./src/*"
+        "./src/*": "./src/*",
+        "./tailwind.config": "./tailwind.config.cjs"
     },
     "files": [
         "src"
