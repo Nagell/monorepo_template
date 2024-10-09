@@ -43,19 +43,6 @@ git commit -m "<type>(<scope>): <subject>"
 
 Read more about the [Conventional Commits](https://github.com/conventional-changelog/commitlint)
 
-🟥**IMPORTANT**  
-`commitlint` checks also scope by scanning nx projects.  
-
-If you just added a new app or library, it is possible that nx has to be restarted to recognize the new project.  
-If you have the `Nx Console` plugin installed in your IDE, most probably don't need to do anything.  
-
-If you use the official Vue plugin most probably you can't use the `Nx Console` plugin (they are known for conflicts).  
-In such a case, you can just run the following command from the root directory.
-
-```bash
-npx nx watch --all -- echo \$NX_PROJECT_NAME
-```
-
 ## Environment variables
 
 Before you add any environment variables or files to the project, please read section **Environment variables**  
