@@ -303,7 +303,7 @@ and pressing on the `{}` icon in the top right corner.
 If you use the default `.code-workspace` file from the root directory, you don't need to add these settings.  
 They are already there.
 
-```json
+```jsonc
 {
     "tailwindCSS.experimental.classRegex": [
         // for VuePrime styling. Example: class: [strings_in_this_array]
