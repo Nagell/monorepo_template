@@ -11,9 +11,9 @@
             <div class="mt-6 w-1/2 max-w-[50rem]">
                 <PostList />
             </div>
-            <button @click="fetchMorePosts">
+            <ButtonItem @click="fetchMorePosts">
                 {{ $t('home.fetchMorePosts') }}
-            </button>
+            </ButtonItem>
             <span v-if="isPostsLoading">
                 {{ $t('home.fetchingPosts') }}
             </span>
@@ -23,6 +23,8 @@
 
 <script setup lang="ts">
     import { storeToRefs } from 'pinia'
+
+    import { ButtonItem } from '@monorepo/ui'
 
     import PostList from '@/components/posts/PostList.vue'
     import DefaultLayout from '@/layouts/DefaultLayout.vue'

@@ -30,7 +30,7 @@ export default getApplicationConfiguration({
 
                 // If some custom split is needed filter it out here and return the chunk name
                 // It is recommended to use 'includes' as vue files are transformed in the process,
-                // ex. 'TheButton.vue' -> 'TheButton.vue_vue_type_script_setup_true_lang-73YVYCtP'
+                // ex. 'ButtonItem.vue' -> 'ButtonItem.vue_vue_type_script_setup_true_lang-73YVYCtP'
                 if (file.includes('node_modules/')) return 'vendor'
                 else return 'index'
             },
