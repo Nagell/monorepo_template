@@ -102,7 +102,7 @@ export default {
         './index.html',
         './src/**/*.{vue,js,ts,jsx,tsx}',
         // './node_modules/<your_library>/**/*.{vue,js,ts,jsx,tsx}'
-        './../../libs/ui/**/*.{vue,js,ts,jsx,tsx}',
+        './../../libs/ui/src/**/*.{vue,js,ts,jsx,tsx}',
     ],
     presets: [
         // base configuration

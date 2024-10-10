@@ -3,6 +3,9 @@
         @apply h-full;
     }
     body {
-        @apply h-full;
+        @apply h-full text-surface-950;
+    }
+    a {
+        @apply hover:text-primary-400;
     }
 }

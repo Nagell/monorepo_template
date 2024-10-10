@@ -9,7 +9,7 @@ export default {
     content: [
         './index.html',
         './src/**/*.{vue,js,ts,jsx,tsx}',
-        './../../libs/ui/**/*.{vue,js,ts,jsx,tsx}',
+        './../../libs/ui/src/**/*.{vue,js,ts,jsx,tsx}',
     ],
     presets: [
         uiLibPreset as Config,

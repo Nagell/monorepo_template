@@ -7,7 +7,7 @@
         "strict": true,
         "jsx": "preserve",
         "jsxImportSource": "vue",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "resolveJsonModule": true,
         "verbatimModuleSyntax": true,
         "noErrorTruncation": true,
