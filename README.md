@@ -10,6 +10,8 @@
     - [NODE\_ENV \& VITE MODE](#node_env--vite-mode)
     - [VITE\_APP\_\*](#vite_app_)
 
+<br>
+
 ## Description
 
 This is a monorepo template for frontend libraries and applications.  
@@ -24,11 +26,14 @@ Used tools and libraries:
 - `typescript` for type safety
 - `tailwindcss` for styling
 
-The template contains a few example libraries and applications with some basic functionality.
+The template contains a few example libraries and applications with some basic functionality.  
+It also demonstrates the connections between them such as usage of outsourced components or composables.  
 
 - `@monorepo/app_1` - example application using the shared libraries
 - `@monorepo/commons` - shared library with some basic helpers and Vue composables
 - `@monorepo/ui` - shared library with some basic styling and components
+
+<br>
 
 ## Project setup / Installation
 
@@ -67,10 +72,14 @@ Good explanation of the struggle with npm caveats is provided by [this article](
 
 </details>
 
+<br>
+
 ## Development
 
 All commands, tips and tricks and documentation about used tools and libraries are in the  
 [DEVELOPMENT.md](./docs/DEVELOPMENT.md) file.
+
+<br>
 
 ## Build
 
@@ -87,18 +96,20 @@ yarn run build:staging
 
 The builds are saved in the `/dist` directory.
 
-**IMPORTANT**  
- In an CI pipeline you require another command to check for affected packages.  
-[Read more](https://nx.dev/ci/features/affected#specify-which-shas-to-use-to-calculate-affected-code)
+> [!NOTE]  
+> In an CI pipeline you require another command to check for affected packages.  
+> [Read more](https://nx.dev/ci/features/affected#specify-which-shas-to-use-to-calculate-affected-code)
+
+<br>
 
 ## Environment variables
 
 ### NODE_ENV & VITE MODE
 
 > [!CAUTION] 
-> Do not add and commit `.env` file in the apps and other projects. There is a known issue with the Nx
+> Do not add and commit `.env` file in the apps and other projects. There is a known issue with the Nx  
 > commands causing usage of the `.env` file for every build mode, no matter what mode is set in the command.  
-> If you need some local environment variables, use `.env.development.local` instead.
+> If you need some local environment variables, use `.env.development.local` instead.  
 
 The NODE_ENV=production is not supported in the .env file in Vite  
 Only NODE_ENV=development is supported to create a development build of the project  
@@ -119,6 +130,8 @@ if (import.meta.env.MODE !== 'production') {
   console.log('Not the production mode');
 }
 ```
+
+<br>
 
 ### VITE_APP_*
 
