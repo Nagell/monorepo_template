@@ -106,7 +106,7 @@ The builds are saved in the `/dist` directory.
 
 ### NODE_ENV & VITE MODE
 
-> [!CAUTION] 
+> [!CAUTION]
 > Do not add and commit `.env` file in the apps and other projects. There is a known issue with the Nx  
 > commands causing usage of the `.env` file for every build mode, no matter what mode is set in the command.  
 > If you need some local environment variables, use `.env.development.local` instead.  

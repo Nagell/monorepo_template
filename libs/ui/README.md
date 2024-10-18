@@ -6,12 +6,14 @@ This library contains Components and styles for our projects.
   - [Documentation](#documentation)
   - [Development](#development)
     - [New Components](#new-components)
-      - [Storybook](#storybook)
-      - [Styles](#styles)
+    - [Storybook](#storybook)
+    - [Styles](#styles)
   - [Using the library in your project](#using-the-library-in-your-project)
-    - [Components](#components)
-    - [Styles](#styles-1)
-    - [Importing Tailwind CSS](#importing-tailwind-css)
+    - [Components usage](#components-usage)
+    - [Styles usage](#styles-usage)
+      - [Importing Tailwind configuration](#importing-tailwind-configuration)
+
+<br>
 
 ## Documentation
 
@@ -21,6 +23,8 @@ To run it locally, use the following command:
 ```bash
 yarn run storybook:dev
 ```
+
+<br>
 
 ## Development
 
@@ -35,7 +39,9 @@ yarn run storybook:dev
    Read more: [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/).
 2. Remember to add your new components to the `src/index.ts` file.
 
-#### Storybook
+<br>
+
+### Storybook
 
 Project is using Storybook to enable isolated development and document components.
 
@@ -55,7 +61,9 @@ parameters: {
 
 Read more [Storybook Docs (Vue)](https://storybook.js.org/docs/vue/writing-stories/introduction).
 
-#### Styles
+<br>
+
+### Styles
 
 Styles are using Tailwind CSS. This means that you should use its classes whenever possible and add custom  
 ones only when necessary. Most of changes can be done in the project's `tailwind.config.js` file.  
@@ -65,9 +73,11 @@ with caution.
 To add some custom classes use `src/assets/styles` directory. They should remain split into directories mirroring  
 Tailwind layers: `base`, `components` and `utilities`.
 
+<br>
+
 ## Using the library in your project
 
-### Components
+### Components usage
 
 You can import the components you need in your project like so:
 
@@ -86,9 +96,11 @@ Should you need to import something directly from the component file, you can do
 import { type Props as ButtonProps } from '@monorepo/ui/src/atoms/Button/ButtonItem.vue'
 ```
 
-### Styles
+<br>
 
-### Importing Tailwind CSS
+### Styles usage
+
+#### Importing Tailwind configuration
 
 To add styles in your project you can import the `tailwind.config.ts` file from this library.
 

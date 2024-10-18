@@ -7,6 +7,8 @@ You can import them in your project by using the following import statement:
 import { MyClass, MyFunction, type MyType } from "@monorepo/commons";
 ```
 
+<br>
+
 ## Development
 
 Newly created functions and components should be added to the `index.ts` file in the root of the library.
