@@ -22,12 +22,16 @@
       - [Missing types from libraries](#missing-types-from-libraries)
       - [Setting up the typescript configuration](#setting-up-the-typescript-configuration)
 
+<br>
+
 ## Commands
 
 To start the development server, build or see the build preview of a specific app  
 go to this project directory and look for a `README.md` for more information.
 
 All projects are located in the `/apps` directory.
+
+<br>
 
 ## Commits
 
@@ -43,10 +47,14 @@ git commit -m "<type>(<scope>): <subject>"
 
 Read more about the [Conventional Commits](https://github.com/conventional-changelog/commitlint)
 
+<br>
+
 ## Environment variables
 
 Before you add any environment variables or files to the project, please read section **Environment variables**  
 in [README.md](./../README.md#environment-variables) file in the root directory.
+
+<br>
 
 ## Dependencies management
 
@@ -73,11 +81,15 @@ yarn add <package-name>
 yarn add <package-name> -D
 ```
 
+<br>
+
 ### Update dependencies
 
 ```bash
 yarn upgrade-interactive --latest
 ```
+
+<br>
 
 ## Libraries
 
@@ -85,7 +97,7 @@ yarn upgrade-interactive --latest
 
 To use a library in an app, follow these steps:
 
-- Add it to the `package.json` file of the project without the version number.  
+1. Add it to the `package.json` file of the project without the version number.  
 By doing so you will always get the latest version of the library.
 
     ```json
@@ -96,7 +108,7 @@ By doing so you will always get the latest version of the library.
     }
     ```
 
-- Modify the `tsconfig.json` file of the project to include the library in the `compilerOptions.paths` object.
+2. Modify the `tsconfig.json` file of the project to include the library in the `compilerOptions.paths` object.
 
     ```json
     {
@@ -110,17 +122,19 @@ By doing so you will always get the latest version of the library.
     }
     ```
 
-- Then run the following command from the root directory - `/`.
+3. Then run the following command from the root directory - `/`.
 
     ```bash
     yarn run init
     ```
 
-- Finally you can import the library parts in your app like this:
+4. Finally you can import the library parts in your app like this:
 
     ```typescript
     import { <library-name> } from '@monorepo/<library-name>';
     ```
+
+<br>
 
 ### Add new library
 
@@ -190,6 +204,8 @@ need to add in your app project a clear definition of the paths in the `tsconfig
 }
 ```
 
+<br>
+
 ## Linting, formatting and types
 
 ### ESLint
@@ -217,9 +233,9 @@ Add the following settings to the `settings.json` file in Visual Studio Code for
 You can open the `settings.json` by going to `File -> Preferences -> Settings`  
 and pressing on the `{}` icon in the top right corner.
 
-🟦**TIP**  
-If you use the default `.code-workspace` file from the root directory, you don't need to add these settings.  
-They are already there.
+🟦 **Note**  
+> If you use the default `.code-workspace` file from the root directory, you don't need to add these settings.  
+> They are already there.
 
 ```json
 {
@@ -264,8 +280,7 @@ They are already there.
 #### ESLint in Rider
 
 <details><summary>Rider settings</summary>
-
-🟥**IMPORTANT**  
+  
 To use the ESLint extension in Rider, you need to open settings and search for ESLint and set the following settings:
 
 - [x] Automatic ESLint configuration  
@@ -274,12 +289,14 @@ To use the ESLint extension in Rider, you need to open settings and search for E
 
 ![Rider ESLint settings](./assets/rider-eslint-settings.png)
 
-🟦**TIP**  
-If you are on a Mac you can open two windows of Rider in the same application.  
-Just open the second Project in the second window and choose the `Window -> Merge All Project Windows` option.  
-More on this subject [here](https://www.jetbrains.com/help/rider/Open_projects_and_solutions.html#switch_solutions)
+🟦 **Note**  
+> If you are on a Mac you can open two windows of Rider in the same application.  
+> Just open the second Project in the second window and choose the `Window -> Merge All Project Windows` option.  
+> More on this subject [here](https://www.jetbrains.com/help/rider/Open_projects_and_solutions.html#switch_solutions)
 
 </details>
+
+<br>
 
 ### Tailwind
 
@@ -299,9 +316,9 @@ Add the following settings to the `settings.json` file in Visual Studio Code for
 You can open the `settings.json` by going to `File -> Preferences -> Settings`  
 and pressing on the `{}` icon in the top right corner.
 
-🟦**TIP**  
-If you use the default `.code-workspace` file from the root directory, you don't need to add these settings.  
-They are already there.
+🟦 **Note**  
+> If you use the default `.code-workspace` file from the root directory, you don't need to add these settings.  
+> They are already there.
 
 ```jsonc
 {
@@ -351,6 +368,8 @@ and ad this configuration to the `experimental > classRegex` field.
 ```
 
 </details>
+
+<br>
 
 ### Typescript
 
