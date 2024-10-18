@@ -33,7 +33,7 @@ The template contains a few example libraries and applications with some basic f
 ## Project setup / Installation
 
 Assuming that you have already installed `Node.js`,  
-go to the root directory - `/Frontend` and run the following commands.
+go to the root directory and run the following commands.
 
 ```bash
 # Install globally Yarn package manager
@@ -85,7 +85,7 @@ yarn run build:prod
 yarn run build:staging
 ```
 
-The builds are saved in the `/Frontend/dist` directory.
+The builds are saved in the `/dist` directory.
 
 **IMPORTANT**  
  In an CI pipeline you require another command to check for affected packages.  
