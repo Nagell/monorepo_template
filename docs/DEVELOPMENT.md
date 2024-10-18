@@ -145,17 +145,17 @@ To add a new library:
 
 1. go to the directory - `/libs` and add a new directory with the library name
 2. copy and paste the following files from an existing library:
-  - `package.json`
-  - `tsconfig.json`
-  - `.eslint.json`
-  - `README.md`
-  - src/`index.ts`
-  - src/`vue-shim.d.ts` (if the library is for Vue.js)
+    - `package.json`
+    - `tsconfig.json`
+    - `.eslint.json`
+    - `README.md`
+    - src/`index.ts`
+    - src/`vue-shim.d.ts` (if the library is for Vue.js)
 3. finally modify the `package.json` file with
-  - the new unique library name
-  - as well as planned exports if they should be any different,
-  - add dependencies & devDependencies  
-  (only if they are unique for this library; otherwise they should be added to the root `package.json` file)  
+    - the new unique library name
+    - as well as planned exports if they should be any different,
+    - add dependencies & devDependencies  
+      (only if they are unique for this library; otherwise they should be added to the root `package.json` file)  
 
 A standard `package.json` file for a library looks like this:
 
