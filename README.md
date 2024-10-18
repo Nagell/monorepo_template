@@ -95,10 +95,10 @@ The builds are saved in the `/dist` directory.
 
 ### NODE_ENV & VITE MODE
 
-🟥**IMPORTANT**  
-Do not add and commit `.env` file to projects. There is a known problem with the Nx commands  
-causing usage of the `.env` file for every build mode, no matter what mode is set in the command.  
-If you need some local environment variables, use `.env.development.local` file.
+> [!CAUTION] 
+> Do not add and commit `.env` file in the apps and other projects. There is a known issue with the Nx
+> commands causing usage of the `.env` file for every build mode, no matter what mode is set in the command.  
+> If you need some local environment variables, use `.env.development.local` instead.
 
 The NODE_ENV=production is not supported in the .env file in Vite  
 Only NODE_ENV=development is supported to create a development build of the project  
