@@ -181,6 +181,15 @@ A standard `package.json` file for a library looks like this:
 }
 ```
 
+> [!CAUTION]
+> If you just added a new app or library, it is possible that nx has to be restarted to recognize the new project.  
+> If you have the `Nx Console` plugin installed in your IDE, most probably don't need to do anything.  
+> Otherwise, you can run the following command from the root directory.
+
+```bash
+npx nx watch --all -- echo \$NX_PROJECT_NAME
+```
+
 #### Adding library types to the app
 
 Be aware that if you define the `exports` field in the `package.json` file, you most probably  
