@@ -33,6 +33,9 @@ It also demonstrates the connections between them such as usage of outsourced co
 - `@monorepo/commons` - shared library with some basic helpers and Vue composables
 - `@monorepo/ui` - shared library with some basic styling and components
 
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/Nagell/monorepo_template)  
+Remember to install suggested extensions in StackBlitz.
+
 <br>
 
 ## Project setup / Installation
