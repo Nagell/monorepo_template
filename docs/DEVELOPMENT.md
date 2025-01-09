@@ -1,42 +1,97 @@
+<a id="readme-top"></a>
+
 # Development
 
 - [Development](#development)
+  - [Documentation](#documentation)
   - [Commands](#commands)
+    - [Root commands](#root-commands)
+    - [Server build - CI/CD](#server-build---cicd)
   - [Commits](#commits)
   - [Environment variables](#environment-variables)
+    - [NODE\_ENV \& VITE MODE](#node_env--vite-mode)
+    - [Code usage](#code-usage)
+    - [VITE\_APP\_\*](#vite_app_)
   - [Dependencies management](#dependencies-management)
     - [Add new dependencies](#add-new-dependencies)
     - [Update dependencies](#update-dependencies)
   - [Libraries](#libraries)
-    - [Use library in an app](#use-library-in-an-app)
-    - [Add new library](#add-new-library)
+    - [Add a new library](#add-a-new-library)
       - [Adding library types to the app](#adding-library-types-to-the-app)
+    - [Connect library to an app](#connect-library-to-an-app)
   - [Linting, formatting and types](#linting-formatting-and-types)
     - [ESLint](#eslint)
       - [ESLint in Visual Studio Code](#eslint-in-visual-studio-code)
-      - [ESLint in Rider](#eslint-in-rider)
+      - [ESLint in Rider / other JetBrains IDEs](#eslint-in-rider--other-jetbrains-ides)
     - [Tailwind](#tailwind)
       - [Tailwind in Visual Studio Code](#tailwind-in-visual-studio-code)
-      - [Tailwind in Rider](#tailwind-in-rider)
+      - [Tailwind in Rider / other JetBrains IDEs](#tailwind-in-rider--other-jetbrains-ides)
     - [Typescript](#typescript)
       - [Missing types from libraries](#missing-types-from-libraries)
       - [Setting up the typescript configuration](#setting-up-the-typescript-configuration)
 
-<br>
+## Documentation
+
+- [Nx Documentation](https://nx.dev/getting-started/intro)
+- [Vite Documentation](https://vite.dev/guide/)
+- [Husky Documentation](https://typicode.github.io/husky/)
+- [commitlint Documentation](https://commitlint.js.org/#/)
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Commands
 
 To start the development server, build or see the build preview of a specific app  
 go to this project directory and look for a `README.md` for more information.
 
-All projects are located in the `/apps` directory.
+All projects are located in the `/apps` directory and libraries in the `/libs` directory.
 
-<br>
+### Root commands
+
+```sh
+# Install dependencies
+yarn run init
+
+# Install dependencies for CI
+yarn run ci
+
+# Build projects for production - outputs are saved in the `/dist` directory
+yarn run build:prod
+
+# Build projects for staging - outputs are saved in the `/dist` directory
+yarn run build:staging
+
+# Clean dependencies
+yarn run clean
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Server build - CI/CD
+
+Locally for testing purposes all of the projects will be built, thanks to the `run-many` command.  
+
+In a CI/CD pipeline Nx should only build the affected projects (only projects containing changes).  
+For this purpose, the `affected` command should be configured.
+
+
+```bash  
+yarn nx affected -t build:prod
+# or
+yarn nx affected -t build:staging
+```
+
+By default the command checks if a package/project is affected by comparing the HEAD of the current branch  
+with the main branch. Check the [official documentation](https://nx.dev/ci/features/affected#specify-which-shas-to-use-to-calculate-affected-code) for more options.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Commits
 
-Thanks to the `commitlint` and `husky` packages, the commits are checked for the correct format.  
-The commit message should be in the following format:
+Thanks to the `commitlint` and `husky` packages, the commit messages are being checked before the commit.  
+This ensures that the messages are in a standardized format.
 
 ```bash
 # type: feat, fix, docs, ...
@@ -47,14 +102,57 @@ git commit -m "<type>(<scope>): <subject>"
 
 Read more about the [Conventional Commits](https://github.com/conventional-changelog/commitlint)
 
-<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Environment variables
 
-Before you add any environment variables or files to the project, please read section **Environment variables**  
-in [README.md](./../README.md#environment-variables) file in the root directory.
+### NODE_ENV & VITE MODE
 
-<br>
+The NODE_ENV=production is not supported by Vite.  
+Only the NODE_ENV=development is being respected to create a development build of the project  
+Vite has also so called Mode, depending on the .env file used for build or a serve command.  
+
+Respectively it uses
+
+- `.env.development` file for development mode (local; serve command)
+- `.env.production` file for production mode (build command)
+- `.env.[mode]` file for custom mode (build command with --mode [mode] argument)
+
+More about modes [here](https://vitejs.dev/guide/env-and-mode.html#modes)  
+
+> [!CAUTION]  
+> If you need some local environment variables in apps or libs you theoretically could use simple `.env` file,  
+> but in combination with Nx it causes a known issue. Nx will use the `.env` file for every build mode,  
+> effectively ignoring the `.env.production` and other `.env.[mode]` files.   
+> Therefore, if you need some local environment variables, use `.env.development` or `.env.development.local` file.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Code usage
+
+To make use of environment variables in your code, you can simply use `import.meta.env.MODE` variable.
+
+```javascript
+if (import.meta.env.MODE !== 'production') {
+  console.log('Not the production mode');
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### VITE_APP_*
+
+Use `VITE_APP_` prefix to expose environment variables to your app  
+
+```bash
+VITE_APP_API_URL=https://api.example.com
+```
+
+> [!CAUTION]  
+> Such variables are exposed to the client-side code and can be seen in the browser's developer tools.  
+> Do not expose any sensitive data in this way (secret api keys, etc.).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Dependencies management
 
@@ -81,7 +179,7 @@ yarn add <package-name>
 yarn add <package-name> -D
 ```
 
-<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Update dependencies
 
@@ -89,57 +187,14 @@ yarn add <package-name> -D
 yarn upgrade-interactive --latest
 ```
 
-<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Libraries
 
-### Use library in an app
-
-To use a library in an app, follow these steps:
-
-1. Add it to the `package.json` file of the project without the version number.  
-By doing so you will always get the latest version of the library.
-
-    ```json
-    {
-        "dependencies": {
-            "@monorepo/<library-name>": "*"
-        }
-    }
-    ```
-
-2. Modify the `tsconfig.json` file of the project to include the library in the `compilerOptions.paths` object.
-
-    ```json
-    {
-        "compilerOptions": {
-            "paths": {
-                "@monorepo/<library-name>": [
-                    "libs/<library-name>/src/index.ts"
-                ]
-            }
-        }
-    }
-    ```
-
-3. Then run the following command from the root directory - `/`.
-
-    ```bash
-    yarn run init
-    ```
-
-4. Finally you can import the library parts in your app like this:
-
-    ```typescript
-    import { <library-name> } from '@monorepo/<library-name>';
-    ```
-
-<br>
-
-### Add new library
+### Add a new library
 
 Libraries in the monorepo are located in the `/libs` directory.  
-In our case they are not meant to be build separately, but to be used in the projects.  
+In our case they are not meant to be build separately, but to be used in the projects directly and bundled with them.  
 
 To add a new library:
 
@@ -155,10 +210,13 @@ To add a new library:
     - the new unique library name
     - as well as planned exports if they should be any different,
     - add dependencies & devDependencies  
-      (only if they are unique for this library; otherwise they should be added to the root `package.json` file)  
+      (only if they are unique for this library; otherwise they should be added to the root `package.json` file -> [Dependencies management](#dependencies-management))  
+
 
 A standard `package.json` file for a library looks like this:
 
+<details><summary>Sample 'package.json'</summary>
+  
 ```json
 {
     "name": "@monorepo/<library-name>",
@@ -180,8 +238,10 @@ A standard `package.json` file for a library looks like this:
     "dependencies": {}
 }
 ```
+</details>
+<br>
 
-> [!CAUTION]
+> [!NOTE]
 > If you just added a new app or library, it is possible that nx has to be restarted to recognize the new project.  
 > If `Nx Console` plugin is installed in your IDE, most probably all will be recognized automatically.  
 > Otherwise, you can run the following command from the root directory.
@@ -190,10 +250,12 @@ A standard `package.json` file for a library looks like this:
 npx nx watch --all -- echo \$NX_PROJECT_NAME
 ```
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 #### Adding library types to the app
 
-Be aware that if you define the `exports` field in the `package.json` file, you most probably  
-need to add in your app project a clear definition of the paths in the `tsconfig.json` file.
+Be aware that if you define the `exports` field in the `package.json` file, most probably you will  
+have to add in your app project a clear definition of those paths in the `tsconfig.json` file.
 
 ```json
 {
@@ -213,17 +275,60 @@ need to add in your app project a clear definition of the paths in the `tsconfig
 }
 ```
 
-<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Connect library to an app
+
+To use an existing or newly created library in an app, follow these steps:
+
+1. Add it to the `package.json` file of the app without the version number.  
+By doing so you will always get the latest version of the library.
+
+    ```json
+    {
+        "dependencies": {
+            "@monorepo/<library-name>": "*"
+        }
+    }
+    ```
+
+2. Modify the `tsconfig.json` file in the app directory to include the library in the `compilerOptions.paths` object.
+
+    ```json
+    {
+        "compilerOptions": {
+            "paths": {
+                "@monorepo/<library-name>": [
+                    "libs/<library-name>/src/index.ts"
+                ]
+            }
+        }
+    }
+    ```
+
+3. Run the following command from the root directory - `/`
+
+    ```bash
+    yarn run init
+    ```
+
+4. Finally you can import the library functions / components in your app
+
+    ```typescript
+    import { <library-name> } from '@monorepo/<library-name>';
+    ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Linting, formatting and types
 
 ### ESLint
 
-The ESLint configuration is located in the `.eslintrc.json` file in the root directory  
+The ESLint configuration is located in the `.eslintrc.cjs` file in the root directory  
 and is imported and extended in the apps if needed.
 
-There is no Prettier in this monorepo for a good reason. Having yet another tool to format the code and solving  
-the conflicts between Prettier and ESLint is avoided thanks to the Anthony Fu's  `@stylistic/eslint-plugin` package.  
+There is no Prettier in this template for a good reason. Having yet another tool to format the code and solving  
+the conflicts between Prettier and ESLint can be avoided thanks to the Anthony Fu's  `@stylistic/eslint-plugin` package.  
 Now ESLint can do the same and at the same time warn us about the code quality.
 
 [More on this subject](https://medium.com/@jolodev/my-thoughts-on-eslint-dropping-formatting-rules-2bc452bee5e2)  
@@ -286,7 +391,7 @@ and pressing on the `{}` icon in the top right corner.
 
 </details>
 
-#### ESLint in Rider
+#### ESLint in Rider / other JetBrains IDEs
 
 <details><summary>Rider settings</summary>
   
@@ -305,7 +410,7 @@ To use the ESLint extension in Rider, you need to open settings and search for E
 
 </details>
 
-<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Tailwind
 
@@ -350,7 +455,7 @@ and pressing on the `{}` icon in the top right corner.
 
 </details>
 
-#### Tailwind in Rider
+#### Tailwind in Rider / other JetBrains IDEs
 
 <details><summary>Rider settings</summary>
 
@@ -378,29 +483,17 @@ and ad this configuration to the `experimental > classRegex` field.
 
 </details>
 
-<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Typescript
 
 The typescript configuration is located in the `tsconfig.base.json` file in the root directory.  
-All projects are (app and libs) are extending this configuration.
+All projects (app and libs) are extending this configuration.
 
 #### Missing types from libraries
 
-Check if the library index file or one of the shortcuts to library directories is not missing  
-in the in the app in `tsconfig.json` file. More on this subject in the [Adding library types to the app](#adding-library-types-to-the-app) section.
-
-```json
-{
-    "compilerOptions": {
-        "paths": {
-            "@monorepo/<library-name>": [
-                "libs/<library-name>/src/index.ts"
-            ]
-        }
-    }
-}
-```
+If it's your case - check if the library index file or one of the shortcuts to library directories is not missing  
+in the in the app in `tsconfig.json` file. More on this -> [Adding library types to the app](#adding-library-types-to-the-app).
 
 #### Setting up the typescript configuration
 
@@ -414,3 +507,5 @@ in which you want to see the local one - a merge/overwrite of the base and the e
 ```bash
 npx tsc --showconfig
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
