@@ -7,6 +7,9 @@
 # dependencies
 **/node_modules/
 
+# nx
+.nx/
+
 # local env files
 .env.local
 .env.*.local

@@ -23,7 +23,7 @@
         "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix src"
     },
     "devDependencies": {
-        "@nx/storybook": "^18.3.2"
+        "@nx/storybook": "^20.3.1"
     },
     "dependencies": {}
 }
