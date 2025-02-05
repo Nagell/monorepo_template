@@ -3,7 +3,7 @@ import ButtonItem, { type Props } from './ButtonItem.vue'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
 const meta: Meta<Props & { text: string }> = {
-    title: 'Atome / ButtonItem',
+    title: 'Atoms / ButtonItem',
     component: ButtonItem,
     tags: [ 'autodocs' ],
     args: {
