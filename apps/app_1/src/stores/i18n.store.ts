@@ -1,14 +1,14 @@
 // stores/i18n.js
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { createI18n } from 'vue-i18n'
+import { type I18n, createI18n } from 'vue-i18n'
 
 import { useLocalStorageStore } from '@/stores/localStorage.store'
 
 import type { LanguageValue } from '@/types/localStorage'
 
 export const useI18nStore = defineStore('i18n', () => {
-    const i18n = ref(null) as any
+    const i18n = ref<I18n | null>(null)
     const isReady = ref(false)
 
     const localStorageStore = useLocalStorageStore()

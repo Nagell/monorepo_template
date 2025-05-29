@@ -1,5 +1,5 @@
 // the axios instance and types
-import { useHttpClient /* ContentType */ } from '@monorepo/commons'
+import { useHttpClient } from '@monorepo/commons'
 
 import type { Post } from '@/types/post'
 

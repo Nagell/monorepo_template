@@ -5,7 +5,7 @@ import type { AxiosInstance, AxiosRequestConfig, HeadersDefaults } from 'axios'
 
 interface HttpClientPayload {
     path?: string
-    config?: AxiosRequestConfig<any>
+    config?: AxiosRequestConfig<unknown>
     options?: UseAxiosOptions
     securityWorker?: (securityData?: unknown | null) => AxiosRequestConfig | void
 }
