@@ -99,6 +99,7 @@ It also demonstrates the connections between them such as usage of outsourced co
     #or
     npm install --global corepack@latest
     corepack enable pnpm
+    corepack use pnpm@latest-10
     ```
 
     or you can follow the other options from the [pnpm installation guide](https://pnpm.io/installation).
