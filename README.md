@@ -137,6 +137,13 @@ It also demonstrates the connections between them such as usage of outsourced co
     pnpm run storybook:dev
     ```
 
+4. Change git remote url to avoid accidental pushes to base project
+
+    ```bash
+    git remote set-url origin github_username/repo_name
+    git remote -v # confirm the changes
+    ```
+
 All commands, tips and documentation for used tools and libraries can be found in the  
 [DEVELOPMENT.md](./docs/DEVELOPMENT.md) file.
 
@@ -165,6 +172,12 @@ Project Link: [https://github.com/Nagell/monorepo_template](https://github.com/N
 - [@stylistic/eslint-plugin](https://eslint.style/packages/default)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CHANGES -->
+## Changes
+
+- **2025-05-29**: Updated to use pnpm v10 instead of yarn classic.  
+If you still want to use the old version, you can switch to the [yarn](https://github.com/Nagell/monorepo_template/tree/yarn) branch of this repository.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [license-shield]: https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge
