@@ -51,23 +51,22 @@ All projects are located in the `/apps` directory and libraries in the `/libs` d
 
 ```sh
 # Install dependencies
-yarn run init
+pnpm run init
 
 # Install dependencies for CI
-yarn run ci
+pnpm run ci
 
 # Build projects for production - outputs are saved in the `/dist` directory
-yarn run build:prod
+pnpm run build:prod
 
 # Build projects for staging - outputs are saved in the `/dist` directory
-yarn run build:staging
+pnpm run build:staging
 
 # Clean dependencies
-yarn run clean
+pnpm run clean
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ### Server build - CI/CD
 
@@ -76,11 +75,10 @@ Locally for testing purposes all of the projects will be built, thanks to the `r
 In a CI/CD pipeline Nx should only build the affected projects (only projects containing changes).  
 For this purpose, the `affected` command should be configured.
 
-
-```bash  
-yarn nx affected -t build:prod
+```bash
+pnpm nx affected -t build:prod
 # or
-yarn nx affected -t build:staging
+pnpm nx affected -t build:staging
 ```
 
 By default the command checks if a package/project is affected by comparing the HEAD of the current branch  
@@ -123,7 +121,7 @@ More about modes [here](https://vitejs.dev/guide/env-and-mode.html#modes)
 > [!CAUTION]  
 > If you need some local environment variables in apps or libs you theoretically could use simple `.env` file,  
 > but in combination with Nx it causes a known issue. Nx will use the `.env` file for every build mode,  
-> effectively ignoring the `.env.production` and other `.env.[mode]` files.   
+> effectively ignoring the `.env.production` and other `.env.[mode]` files.
 > Therefore, if you need some local environment variables, use `.env.development` or `.env.development.local` file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -162,21 +160,21 @@ Go to the root directory and run the following command.
 
 ```bash
 # for dependencies 
-yarn add <package-name> -W
+pnpm add <package-name> -w
 
 # for devDependencies
-yarn add <package-name> -DW
+pnpm add <package-name> -Dw
 ```
 
 If a specific package is required **only for one** specific project, then go to the directory of this project  
-and run the same command without the `-W` flag.
+and run the same command without the `-w` flag.
 
 ```bash
 # for dependencies
-yarn add <package-name>
+pnpm add <package-name>
 
 # for devDependencies
-yarn add <package-name> -D
+pnpm add <package-name> -D
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -184,7 +182,7 @@ yarn add <package-name> -D
 ### Update dependencies
 
 ```bash
-yarn upgrade-interactive --latest
+pnpm update --latest
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -212,7 +210,6 @@ To add a new library:
     - add dependencies & devDependencies  
       (only if they are unique for this library; otherwise they should be added to the root `package.json` file -> [Dependencies management](#dependencies-management))  
 
-
 A standard `package.json` file for a library looks like this:
 
 <details><summary>Sample 'package.json'</summary>
@@ -238,6 +235,7 @@ A standard `package.json` file for a library looks like this:
     "dependencies": {}
 }
 ```
+
 </details>
 <br>
 
@@ -309,7 +307,7 @@ By doing so you will always get the latest version of the library.
 3. Run the following command from the root directory - `/`
 
     ```bash
-    yarn run init
+    pnpm run init
     ```
 
 4. Finally you can import the library functions / components in your app

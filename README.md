@@ -54,7 +54,7 @@
 
 ![Vue Based Monorepo Template - Cover][product-cover]
 
-I've built this monorepo template for frontend libraries and applications based on Yarn workspaces and Nx.  
+I've built this monorepo template for frontend libraries and applications based on pnpm workspaces and Nx.  
 The ease of code reusability as well as good starting point for optimized builds will provide you  
 a solid foundation for projects that are expected to grow.
 
@@ -76,7 +76,7 @@ It also demonstrates the connections between them such as usage of outsourced co
 ### Built With
 
 - [![Nx][Nx]][Nx-url]
-- [![Yarn][Yarn]][Yarn-url]
+- [![pnpm][pnpm]][pnpm-url]
 - [![Husky][Husky]][Husky-url]
 - [![Vite][Vite]][Vite-url]
 - [![TypeScript][TypeScript]][TypeScript-url]
@@ -92,21 +92,18 @@ It also demonstrates the connections between them such as usage of outsourced co
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
-- yarn:
+- pnpm:
 
     ```bash
-    npm install -g yarn
+    npm install -g pnpm
     ```
 
-    <details><summary>Why yarn?</summary>
+    <details><summary>Why pnpm?</summary>
+    Because we are using a monorepo structure, we have to use so called `workspaces` as well.  
+    pnpm's `workspaces` implementation is fast, efficient, and disk-space friendly due to its unique symlinked node_modules structure.  
 
-    Because we are using monorepo structure, we have to use so called `workspaces` as well.  
-    Yarn `workspaces` implementation is far superior to the npm one, by providing more features and better performance.  
-
-    For example package hoisting, which allows us installing dependencies in the root `node_modules`  
-    and save time and dependency management overhead are working much better in Yarn.  
-    Good explanation of the struggle with npm caveats is provided in [this article](https://medium.com/@d.ts/how-to-use-npm-workspace-d155076da956) ;)
-
+    For example, package hoisting and dependency management are handled efficiently by pnpm.  
+    You can read more about pnpm's advantages in the [official documentation](https://pnpm.io/motivation).
     </details>
 
 ### Installation
@@ -120,7 +117,7 @@ It also demonstrates the connections between them such as usage of outsourced co
 2. Install dependencies
 
     ```bash
-    yarn run init
+    pnpm run init
     ```
 
 3. Start the development server
@@ -128,11 +125,11 @@ It also demonstrates the connections between them such as usage of outsourced co
     ```bash
     # Start the app_1
     cd apps/app_1
-    yarn run dev
+    pnpm run dev
 
     # Start the Storybook
     cd libs/ui
-    yarn nx storybook -p 6006
+    pnpm nx storybook -p 6006
     ```
 
 All commands, tips and documentation for used tools and libraries can be found in the  
@@ -173,8 +170,8 @@ Project Link: [https://github.com/Nagell/monorepo_template](https://github.com/N
 
 [Nx]: https://img.shields.io/badge/Nx-143055?style=for-the-badge&logo=nx&logoColor=white
 [Nx-url]: https://nx.dev/
-[Yarn]: https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white
-[Yarn-url]: https://yarnpkg.com/
+[pnpm]: https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white
+[pnpm-url]: https://pnpm.io/
 [Husky]: https://img.shields.io/badge/Husky-000000?style=for-the-badge&logo=husky&logoColor=white
 [Husky-url]: https://typicode.github.io/husky/
 [Vite]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
