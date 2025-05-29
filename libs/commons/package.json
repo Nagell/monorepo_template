@@ -7,12 +7,13 @@
         ".": "./src/index.ts",
         "./composables/*": "./src/composables/*"
     },
-    "nx": {
-        "projectType": "library"
-    },
     "scripts": {
         "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src",
         "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix src"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "devDependencies": {},
+    "nx": {
+        "projectType": "library"
+    }
 }

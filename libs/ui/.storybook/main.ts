@@ -1,5 +1,3 @@
-import { dirname, join } from 'path'
-
 import type { StorybookConfig } from '@storybook/vue3-vite'
 
 const config: StorybookConfig = {
@@ -20,18 +18,23 @@ const config: StorybookConfig = {
         '../src/sandbox/**/*.stories.@(js|jsx|ts|tsx)',
     ],
     addons: [
-        getAbsolutePath('@storybook/addon-links'),
-        getAbsolutePath('@storybook/addon-essentials'),
-        getAbsolutePath('@storybook/addon-interactions'),
+        '@storybook/addon-links',
+        '@storybook/addon-essentials',
+        '@storybook/addon-interactions',
     ],
     framework: {
-        name: getAbsolutePath('@storybook/vue3-vite'),
+        name: '@storybook/vue3-vite',
         options: {},
     },
     docs: {
         autodocs: 'tag',
     },
     async viteFinal(config) {
+        config.optimizeDeps = config.optimizeDeps || {}
+        config.optimizeDeps.include = [
+            ...(config.optimizeDeps.include || []),
+            '@storybook/builder-vite'
+        ]
         return config
     },
     core: {
@@ -39,7 +42,3 @@ const config: StorybookConfig = {
     },
 }
 export default config
-
-function getAbsolutePath(value: string): any {
-    return dirname(require.resolve(join(value, 'package.json')))
-}

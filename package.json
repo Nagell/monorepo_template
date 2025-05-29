@@ -3,18 +3,12 @@
     "version": "1.0.0",
     "private": true,
     "license": "MIT",
-    "workspaces": {
-        "packages": [
-            "apps/*",
-            "libs/*"
-        ]
-    },
     "scripts": {
-        "init": "yarn install",
-        "ci": "yarn install --frozen-lockfile",
+        "init": "pnpm i",
+        "ci": "pnpm i --frozen-lockfile",
         "build:prod": "nx run-many -t build:prod",
         "build:staging": "nx run-many -t build:staging",
-        "clean": "npm exec --workspaces -- npx rimraf node_modules && npx rimraf node_modules",
+        "clean": "pnpm dlx rimraf --glob packages/*/dist packages/*/node_modules node_modules",
         "prepare": "husky"
     },
     "dependencies": {

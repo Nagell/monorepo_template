@@ -11,9 +11,6 @@
     "files": [
         "src"
     ],
-    "nx": {
-        "projectType": "library"
-    },
     "scripts": {
         "storybook:dev": "nx storybook -p 6006",
         "storybook:build": "nx build-storybook",
@@ -22,8 +19,11 @@
         "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src",
         "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix src"
     },
+    "dependencies": {},
     "devDependencies": {
         "@nx/storybook": "^20.3.1"
     },
-    "dependencies": {}
+    "nx": {
+        "projectType": "library"
+    }
 }
