@@ -82,5 +82,6 @@
             // additional inline option - add /*tw:*/ before any string
             "\\/\\*\\s?tw:\\s?\\*\\/\\s?['\"`](.*)['\"`]"
         ],
+        "nxConsole.generateAiAgentRules": true,
     }
 }

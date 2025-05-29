@@ -9,6 +9,7 @@
 
 # nx
 .nx/
+.nx/cache
 
 # local env files
 .env.local
@@ -44,4 +45,6 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 
-.nx/cache
+# Miscellaneous
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
