@@ -96,7 +96,12 @@ It also demonstrates the connections between them such as usage of outsourced co
 
     ```bash
     npm install -g pnpm
+    #or
+    npm install --global corepack@latest
+    corepack enable pnpm
     ```
+
+    or you can follow the other options from the [pnpm installation guide](https://pnpm.io/installation).
 
     <details><summary>Why pnpm?</summary>
     Because we are using a monorepo structure, we have to use so called `workspaces` as well.  
@@ -129,7 +134,7 @@ It also demonstrates the connections between them such as usage of outsourced co
 
     # Start the Storybook
     cd libs/ui
-    pnpm nx storybook -p 6006
+    pnpm run storybook:dev
     ```
 
 All commands, tips and documentation for used tools and libraries can be found in the  
