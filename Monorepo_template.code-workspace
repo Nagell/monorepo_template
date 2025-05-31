@@ -83,5 +83,6 @@
             "\\/\\*\\s?tw:\\s?\\*\\/\\s?['\"`](.*)['\"`]"
         ],
         "nxConsole.generateAiAgentRules": true,
+        "nxConsole.nxWorkspacePath": "",
     }
 }
