@@ -6,8 +6,8 @@
     "scripts": {
         "init": "pnpm i",
         "ci": "pnpm i --frozen-lockfile",
-        "build:prod": "nx run-many -t build:prod",
-        "build:staging": "nx run-many -t build:staging",
+        "build:prod": "pnpm nx run-many -t build:prod",
+        "build:staging": "pnpm nx run-many -t build:staging",
         "clean": "pnpm dlx rimraf --glob packages/*/dist packages/*/node_modules node_modules",
         "prepare": "husky"
     },
